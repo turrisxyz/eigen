@@ -186,7 +186,7 @@ export const Search2: React.FC<Search2Props> = (props) => {
         >
           <Configure clickAnalytics />
           <RefetchWhenApiKeyExpiredContainer relay={relay} />
-          <Flex p={2} pb={1}>
+          <Flex pt={2} pb={1}>
             <SearchInputContainer
               placeholder="Search artists, artworks, galleries, etc"
               onReset={handleResetSearchInput}
