@@ -1,7 +1,9 @@
 import SearchIcon from "lib/Icons/SearchIcon"
 import { Flex, Input, InputProps, Sans, useSpace } from "palette"
-import React, { RefObject, useRef, useState } from "react"
-import { Animated, Easing, LayoutChangeEvent, TextInput, TouchableOpacity, useWindowDimensions } from "react-native"
+import React, { RefObject } from "react"
+import { TextInput, TouchableOpacity, useWindowDimensions } from "react-native"
+import Animated, { Easing } from "react-native-reanimated"
+import { useAnimatedValue } from "./StickyTabPage/reanimatedHelpers"
 
 interface SearchInputProps extends InputProps {
   enableCancelButton?: boolean
@@ -10,24 +12,18 @@ interface SearchInputProps extends InputProps {
 
 export const SearchInput = React.forwardRef<TextInput, SearchInputProps>(
   ({ enableCancelButton, onChangeText, onClear, onCancelPress, ...props }, ref) => {
-    const [cancelWidth, setCancelWidth] = useState(0)
-    const animationValue = useRef(new Animated.Value(0)).current
+    const cancelWidth = useAnimatedValue(0)
+    const animationValue = useAnimatedValue(0)
     const { width } = useWindowDimensions()
     const space = useSpace()
-
-    console.log("[debug] width", width)
+    const inputWidth = Animated.sub(width, cancelWidth)
 
     const animateTo = (toValue: 1 | 0) => {
       Animated.timing(animationValue, {
         toValue,
-        easing: Easing.linear,
-        duration: 200,
-        useNativeDriver: false,
+        easing: Easing.inOut(Easing.ease),
+        duration: 180,
       }).start()
-    }
-
-    const handleLayout = (event: LayoutChangeEvent) => {
-      setCancelWidth(event.nativeEvent.layout.width)
     }
 
     return (
@@ -37,9 +33,9 @@ export const SearchInput = React.forwardRef<TextInput, SearchInputProps>(
             width: enableCancelButton
               ? animationValue.interpolate({
                   inputRange: [0, 1],
-                  outputRange: [width, width - cancelWidth],
+                  outputRange: [width, inputWidth],
                 })
-              : width - cancelWidth,
+              : inputWidth,
           }}
         >
           <Input
@@ -62,7 +58,14 @@ export const SearchInput = React.forwardRef<TextInput, SearchInputProps>(
           />
         </Animated.View>
         {!!enableCancelButton && (
-          <Flex alignItems="center" onLayout={handleLayout} justifyContent="center" flexDirection="row">
+          <Animated.View
+            style={{
+              alignItems: "center",
+              justifyContent: "center",
+              flexDirection: "row",
+            }}
+            onLayout={Animated.event([{ nativeEvent: { layout: { width: cancelWidth } } }])}
+          >
             <TouchableOpacity
               onPress={() => {
                 ;(ref as RefObject<TextInput>).current?.blur()
@@ -94,7 +97,7 @@ export const SearchInput = React.forwardRef<TextInput, SearchInputProps>(
                 </Sans>
               </Animated.Text>
             </TouchableOpacity>
-          </Flex>
+          </Animated.View>
         )}
       </Flex>
     )
