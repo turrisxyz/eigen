@@ -84,6 +84,9 @@ const Home = (props: Props) => {
 
   // A/B Testing
   const treatment = useTreatment("HomeScreenWorksForYouVsWorksByArtistsYouFollow")
+  const newTreatment = useTreatment("SomeCoolThing")
+  console.log("SPLITIO::new", newTreatment)
+  console.log("SPLITIO::old", treatment)
   const newWorks =
     treatment === "worksForYou"
       ? {

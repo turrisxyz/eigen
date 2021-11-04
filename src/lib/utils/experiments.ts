@@ -18,7 +18,11 @@ function defineExperiments<T extends string>(expirmentMap: { readonly [experimen
 export const experiments = defineExperiments({
   HomeScreenWorksForYouVsWorksByArtistsYouFollow: {
     splitName: "HomeScreenWorksForYouVsWorksByArtistsYouFollow",
-    fallbackTreatment: "worksByArtistsYouFolow",
+    fallbackTreatment: "U2",
+  },
+  SomeCoolThing: {
+    splitName: "SomeCoolThing",
+    fallbackTreatment: "c",
   },
 })
 export type EXPERIMENT_NAME = keyof typeof experiments
