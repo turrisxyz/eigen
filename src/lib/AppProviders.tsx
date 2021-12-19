@@ -3,6 +3,7 @@ import { Theme } from "palette"
 import React, { ReactNode } from "react"
 import { SafeAreaProvider } from "react-native-safe-area-context"
 import { RelayEnvironmentProvider } from "relay-hooks"
+import { CustomShareSheet } from "./Components/CustomShareSheet/CustomShareSheet"
 import { _FancyModalPageWrapper } from "./Components/FancyModal/FancyModalContext"
 import { PopoverMessageProvider } from "./Components/PopoverMessage/PopoverMessageProvider"
 import { ToastProvider } from "./Components/Toast/toastHook"
@@ -22,6 +23,7 @@ export const AppProviders = ({ children }: { children: ReactNode }) => (
                   <ToastProvider>
                     {/*  */}
                     {children}
+                    <CustomShareSheet />
                     {/*  */}
                   </ToastProvider>
                 </_FancyModalPageWrapper>

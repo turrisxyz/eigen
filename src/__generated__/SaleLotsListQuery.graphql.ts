@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 // @ts-nocheck
-/* @relayHash e828ff0222243db5f075d49ba9b154d9 */
+/* @relayHash 8745b70622f9ea946a975d359001fa80 */
 
 import { ConcreteRequest } from "relay-runtime";
 import { FragmentRefs } from "relay-runtime";
@@ -68,6 +68,7 @@ export type SaleLotsListQueryRawResponse = {
                     readonly lotLabel: string | null;
                     readonly id: string;
                 }) | null | undefined;
+                readonly isSaved?: boolean | null | undefined;
                 readonly partner?: ({
                     readonly name: string | null;
                     readonly id: string;
@@ -113,9 +114,11 @@ fragment ArtworkGridItem_artwork on Artwork {
   date
   saleMessage
   slug
+  id
   internalID
   artistNames
   href
+  isSaved
   sale {
     isAuction
     isClosed
@@ -783,6 +786,13 @@ return {
                       {
                         "alias": null,
                         "args": null,
+                        "kind": "ScalarField",
+                        "name": "isSaved",
+                        "storageKey": null
+                      },
+                      {
+                        "alias": null,
+                        "args": null,
                         "concreteType": "Partner",
                         "kind": "LinkedField",
                         "name": "partner",
@@ -848,7 +858,7 @@ return {
     ]
   },
   "params": {
-    "id": "e828ff0222243db5f075d49ba9b154d9",
+    "id": "8745b70622f9ea946a975d359001fa80",
     "metadata": {},
     "name": "SaleLotsListQuery",
     "operationKind": "query",

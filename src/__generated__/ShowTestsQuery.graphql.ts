@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 // @ts-nocheck
-/* @relayHash 27856e34cc439060191ae665aafb665b */
+/* @relayHash 69722af30de623107228867716356579 */
 
 import { ConcreteRequest } from "relay-runtime";
 import { FragmentRefs } from "relay-runtime";
@@ -35,9 +35,11 @@ fragment ArtworkGridItem_artwork on Artwork {
   date
   saleMessage
   slug
+  id
   internalID
   artistNames
   href
+  isSaved
   sale {
     isAuction
     isClosed
@@ -1131,6 +1133,13 @@ return {
                           {
                             "alias": null,
                             "args": null,
+                            "kind": "ScalarField",
+                            "name": "isSaved",
+                            "storageKey": null
+                          },
+                          {
+                            "alias": null,
+                            "args": null,
                             "concreteType": "Sale",
                             "kind": "LinkedField",
                             "name": "sale",
@@ -1286,7 +1295,7 @@ return {
     ]
   },
   "params": {
-    "id": "27856e34cc439060191ae665aafb665b",
+    "id": "69722af30de623107228867716356579",
     "metadata": {
       "relayTestingSelectionTypeInfo": {
         "show": {
@@ -1472,6 +1481,7 @@ return {
         },
         "show.showArtworks.edges.node.image.url": (v15/*: any*/),
         "show.showArtworks.edges.node.internalID": (v17/*: any*/),
+        "show.showArtworks.edges.node.isSaved": (v22/*: any*/),
         "show.showArtworks.edges.node.partner": {
           "enumValues": null,
           "nullable": true,

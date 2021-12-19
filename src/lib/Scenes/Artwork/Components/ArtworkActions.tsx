@@ -54,7 +54,7 @@ export const shareContent = (title: string, href: string, artists: ArtworkAction
 export class ArtworkActions extends React.Component<ArtworkActionsProps> {
   @track((props: ArtworkActionsProps) => {
     return {
-      action_name: props.artwork.is_saved ? Schema.ActionNames.ArtworkUnsave : Schema.ActionNames.ArtworkSave,
+      action_name: props.artwork.isSaved ? Schema.ActionNames.ArtworkUnsave : Schema.ActionNames.ArtworkSave,
       action_type: Schema.ActionTypes.Success,
       context_module: Schema.ContextModules.ArtworkActions,
     }
@@ -73,8 +73,8 @@ export class ArtworkActions extends React.Component<ArtworkActionsProps> {
           }
         }
       `,
-      variables: { input: { artworkID: artwork.internalID, remove: artwork.is_saved } },
-      optimisticResponse: { saveArtwork: { artwork: { id: artwork.id, is_saved: !artwork.is_saved } } },
+      variables: { input: { artworkID: artwork.internalID, remove: artwork.isSaved } },
+      optimisticResponse: { saveArtwork: { artwork: { id: artwork.id, is_saved: !artwork.isSaved } } },
       onCompleted: () =>
         userHadMeaningfulInteraction({
           contextModule: ContextModule.artworkMetadata,
@@ -102,7 +102,7 @@ export class ArtworkActions extends React.Component<ArtworkActionsProps> {
 
   render() {
     const {
-      artwork: { is_saved, is_hangable, sale },
+      artwork: { isSaved, isHangable, sale },
     } = this.props
 
     const isOpenSale = sale && sale.isAuction && !sale.isClosed
@@ -113,10 +113,10 @@ export class ArtworkActions extends React.Component<ArtworkActionsProps> {
           {isOpenSale ? (
             <Touchable haptic onPress={() => this.handleArtworkSave()}>
               <UtilButton pr={2}>
-                <Box mr={0.5}>{is_saved ? <BellFillIcon fill="blue100" /> : <BellIcon />}</Box>
+                <Box mr={0.5}>{isSaved ? <BellFillIcon fill="blue100" /> : <BellIcon />}</Box>
                 <ClassTheme>
                   {({ color }) => (
-                    <Sans size="3" color={is_saved ? color("blue100") : color("black100")}>
+                    <Sans size="3" color={isSaved ? color("blue100") : color("black100")}>
                       Watch lot
                     </Sans>
                   )}
@@ -126,11 +126,11 @@ export class ArtworkActions extends React.Component<ArtworkActionsProps> {
           ) : (
             <Touchable haptic onPress={() => this.handleArtworkSave()}>
               <UtilButton pr={2}>
-                <Box mr={0.5}>{is_saved ? <HeartFillIcon fill="blue100" /> : <HeartIcon />}</Box>
+                <Box mr={0.5}>{isSaved ? <HeartFillIcon fill="blue100" /> : <HeartIcon />}</Box>
                 <ClassTheme>
                   {({ color }) => (
-                    <Sans size="3" color={is_saved ? color("blue100") : color("black100")}>
-                      {is_saved ? "Saved" : "Save"}
+                    <Sans size="3" color={isSaved ? color("blue100") : color("black100")}>
+                      {isSaved ? "Saved" : "Save"}
                     </Sans>
                   )}
                 </ClassTheme>
@@ -138,7 +138,7 @@ export class ArtworkActions extends React.Component<ArtworkActionsProps> {
             </Touchable>
           )}
 
-          {!!(LegacyNativeModules.ARCocoaConstantsModule.AREnabled && is_hangable) && (
+          {!!(LegacyNativeModules.ARCocoaConstantsModule.AREnabled && isHangable) && (
             <TouchableWithoutFeedback onPress={() => this.openViewInRoom()}>
               <UtilButton pr={2}>
                 <Box mr={0.5}>
@@ -176,8 +176,8 @@ export const ArtworkActionsFragmentContainer = createFragmentContainer(ArtworkAc
       slug
       title
       href
-      is_saved: isSaved
-      is_hangable: isHangable
+      isSaved
+      isHangable
       artists {
         name
       }

@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 // @ts-nocheck
-/* @relayHash a78223e3071b01d08b87e646f6708270 */
+/* @relayHash 75e5d28e2a6611719d3c24175ae824df */
 
 import { ConcreteRequest } from "relay-runtime";
 import { FragmentRefs } from "relay-runtime";
@@ -96,9 +96,11 @@ fragment ArtworkGridItem_artwork on Artwork {
   date
   saleMessage
   slug
+  id
   internalID
   artistNames
   href
+  isSaved
   sale {
     isAuction
     isClosed
@@ -682,7 +684,14 @@ v27 = [
       },
       (v2/*: any*/),
       (v3/*: any*/),
-      (v23/*: any*/)
+      (v23/*: any*/),
+      {
+        "alias": null,
+        "args": null,
+        "kind": "ScalarField",
+        "name": "isSaved",
+        "storageKey": null
+      }
     ],
     "storageKey": null
   },
@@ -1551,7 +1560,7 @@ return {
     ]
   },
   "params": {
-    "id": "a78223e3071b01d08b87e646f6708270",
+    "id": "75e5d28e2a6611719d3c24175ae824df",
     "metadata": {},
     "name": "HomeAboveTheFoldQuery",
     "operationKind": "query",

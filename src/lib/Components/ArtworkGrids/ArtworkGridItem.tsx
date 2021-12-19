@@ -1,4 +1,4 @@
-import { ScreenOwnerType, tappedMainArtworkGrid } from "@artsy/cohesion"
+import { ContextModule, OwnerType, ScreenOwnerType, tappedMainArtworkGrid } from "@artsy/cohesion"
 import { ArtworkGridItem_artwork } from "__generated__/ArtworkGridItem_artwork.graphql"
 import { filterArtworksParams } from "lib/Components/ArtworkFilter/ArtworkFilterHelpers"
 import { ArtworksFiltersStore } from "lib/Components/ArtworkFilter/ArtworkFilterStore"
@@ -7,13 +7,16 @@ import { navigate } from "lib/navigation/navigate"
 import { GlobalStore } from "lib/store/GlobalStore"
 import { getUrgencyTag } from "lib/utils/getUrgencyTag"
 import { PlaceholderBox, PlaceholderRaggedText, RandomNumberGenerator } from "lib/utils/placeholders"
+import { userHadMeaningfulInteraction } from "lib/utils/userHadMeaningfulInteraction"
 import { Box, Flex, Sans, Spacer, Text, TextProps, Touchable } from "palette"
 import React, { useRef } from "react"
 import { View } from "react-native"
-import { createFragmentContainer, graphql } from "react-relay"
+import { commitMutation, createFragmentContainer, graphql, RelayProp } from "react-relay"
 import { useTracking } from "react-tracking"
+import { useCustomShareSheetStore } from "../CustomShareSheet/CustomShareSheetStore"
 
 export interface ArtworkProps {
+  relay: RelayProp
   artwork: ArtworkGridItem_artwork
   // If it's not provided, then it will push just the one artwork
   // to the switchboard.
@@ -47,6 +50,7 @@ export interface ArtworkProps {
 }
 
 export const Artwork: React.FC<ArtworkProps> = ({
+  relay,
   artwork,
   onPress,
   trackTap,
@@ -69,6 +73,7 @@ export const Artwork: React.FC<ArtworkProps> = ({
 }) => {
   const itemRef = useRef<any>()
   const tracking = useTracking()
+  const sharesheet = useCustomShareSheetStore()
 
   let filterParams: any
 
@@ -126,7 +131,43 @@ export const Artwork: React.FC<ArtworkProps> = ({
   const urgencyTag = getUrgencyTag(artwork?.sale?.endAt)
 
   return (
-    <Touchable onPress={() => handleTap()}>
+    <Touchable
+      onPress={() => handleTap()}
+      onLongPress={[
+        {
+          title: artwork.isSaved ? "Remove from saved" : "Save",
+          systemIcon: artwork.isSaved ? "heart.fill" : "heart",
+          onPress: () => {
+            commitMutation(relay.environment, {
+              mutation: graphql`
+                mutation ArtworkGridItemSaveMutation($input: SaveArtworkInput!) {
+                  saveArtwork(input: $input) {
+                    artwork {
+                      id
+                      is_saved: isSaved
+                    }
+                  }
+                }
+              `,
+              variables: { input: { artworkID: artwork.internalID, remove: artwork.isSaved } },
+              optimisticResponse: { saveArtwork: { artwork: { id: artwork.id, is_saved: !artwork.isSaved } } },
+              onCompleted: () =>
+                userHadMeaningfulInteraction({
+                  contextModule: ContextModule.artworkMetadata,
+                  contextOwnerType: OwnerType.artwork,
+                  contextOwnerId: artwork.internalID,
+                  contextOwnerSlug: artwork.slug,
+                }),
+            })
+          },
+        },
+        {
+          title: "Share",
+          systemIcon: "square.and.arrow.up",
+          onPress: () => sharesheet.show({ type: "artwork", slug: artwork.slug }),
+        },
+      ]}
+    >
       <View ref={itemRef}>
         {!!artwork.image && (
           <View>
@@ -246,9 +287,11 @@ export default createFragmentContainer(Artwork, {
       date
       saleMessage
       slug
+      id
       internalID
       artistNames
       href
+      isSaved
       sale {
         isAuction
         isClosed

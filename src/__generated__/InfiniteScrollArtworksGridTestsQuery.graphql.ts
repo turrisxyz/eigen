@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 // @ts-nocheck
-/* @relayHash 620d93c74a5a586acccd5674a2309869 */
+/* @relayHash 8deef6e0a35af9f1336f4ba0bef06fd4 */
 
 import { ConcreteRequest } from "relay-runtime";
 import { FragmentRefs } from "relay-runtime";
@@ -46,6 +46,7 @@ export type InfiniteScrollArtworksGridTestsQueryRawResponse = {
                 readonly internalID: string;
                 readonly artistNames: string | null;
                 readonly href: string | null;
+                readonly isSaved: boolean | null;
                 readonly sale: ({
                     readonly isAuction: boolean | null;
                     readonly isClosed: boolean | null;
@@ -107,9 +108,11 @@ fragment ArtworkGridItem_artwork on Artwork {
   date
   saleMessage
   slug
+  id
   internalID
   artistNames
   href
+  isSaved
   sale {
     isAuction
     isClosed
@@ -366,6 +369,13 @@ return {
                   {
                     "alias": null,
                     "args": null,
+                    "kind": "ScalarField",
+                    "name": "isSaved",
+                    "storageKey": null
+                  },
+                  {
+                    "alias": null,
+                    "args": null,
                     "concreteType": "Sale",
                     "kind": "LinkedField",
                     "name": "sale",
@@ -490,7 +500,7 @@ return {
     ]
   },
   "params": {
-    "id": "620d93c74a5a586acccd5674a2309869",
+    "id": "8deef6e0a35af9f1336f4ba0bef06fd4",
     "metadata": {},
     "name": "InfiniteScrollArtworksGridTestsQuery",
     "operationKind": "query",

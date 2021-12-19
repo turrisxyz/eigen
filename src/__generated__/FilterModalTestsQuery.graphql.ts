@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 // @ts-nocheck
-/* @relayHash 0ac9c4bbf04b60ebbe588bfb4536add5 */
+/* @relayHash 83450bb19c6e80a0624a791f794e2718 */
 
 import { ConcreteRequest } from "relay-runtime";
 import { FragmentRefs } from "relay-runtime";
@@ -44,6 +44,7 @@ export type FilterModalTestsQueryRawResponse = {
                     readonly internalID?: string | undefined;
                     readonly artistNames?: string | null | undefined;
                     readonly href?: string | null | undefined;
+                    readonly isSaved?: boolean | null | undefined;
                     readonly sale?: ({
                         readonly isAuction: boolean | null;
                         readonly isClosed: boolean | null;
@@ -102,9 +103,11 @@ fragment ArtworkGridItem_artwork on Artwork {
   date
   saleMessage
   slug
+  id
   internalID
   artistNames
   href
+  isSaved
   sale {
     isAuction
     isClosed
@@ -576,6 +579,13 @@ return {
                           {
                             "alias": null,
                             "args": null,
+                            "kind": "ScalarField",
+                            "name": "isSaved",
+                            "storageKey": null
+                          },
+                          {
+                            "alias": null,
+                            "args": null,
                             "concreteType": "Sale",
                             "kind": "LinkedField",
                             "name": "sale",
@@ -720,7 +730,7 @@ return {
     ]
   },
   "params": {
-    "id": "0ac9c4bbf04b60ebbe588bfb4536add5",
+    "id": "83450bb19c6e80a0624a791f794e2718",
     "metadata": {
       "relayTestingSelectionTypeInfo": {
         "marketingCollection": {
@@ -823,6 +833,7 @@ return {
         },
         "marketingCollection.collectionArtworks.edges.node.image.url": (v9/*: any*/),
         "marketingCollection.collectionArtworks.edges.node.internalID": (v8/*: any*/),
+        "marketingCollection.collectionArtworks.edges.node.isSaved": (v10/*: any*/),
         "marketingCollection.collectionArtworks.edges.node.partner": {
           "enumValues": null,
           "nullable": true,

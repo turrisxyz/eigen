@@ -93,10 +93,12 @@ export const Touchable: React.FC<TouchableProps> = ({
       </TouchableHighlight>
     )
 
+  return contextActions !== undefined ? (
+    <ContextMenu actions={contextActions} onPress={contextOnPress}>
+      <InnerTouchable />
+    </ContextMenu>
   ) : (
-    <TouchableHighlight underlayColor={color("white100")} activeOpacity={0.8} {...props} onPress={onPressWrapped}>
-      {inner}
-    </TouchableHighlight>
+    <InnerTouchable />
   )
 }
 

@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 // @ts-nocheck
-/* @relayHash e227d3115b8cab1ec7dc4093962c848f */
+/* @relayHash 714b1603b47123d85a313d386fef4bf9 */
 
 import { ConcreteRequest } from "relay-runtime";
 import { FragmentRefs } from "relay-runtime";
@@ -18,8 +18,8 @@ export type ArtworkActionsTestsQueryRawResponse = {
         readonly slug: string;
         readonly title: string | null;
         readonly href: string | null;
-        readonly is_saved: boolean | null;
-        readonly is_hangable: boolean | null;
+        readonly isSaved: boolean | null;
+        readonly isHangable: boolean | null;
         readonly artists: ReadonlyArray<({
             readonly name: string | null;
             readonly id: string;
@@ -58,8 +58,8 @@ fragment ArtworkActions_artwork on Artwork {
   slug
   title
   href
-  is_saved: isSaved
-  is_hangable: isHangable
+  isSaved
+  isHangable
   artists {
     name
     id
@@ -163,14 +163,14 @@ return {
             "storageKey": null
           },
           {
-            "alias": "is_saved",
+            "alias": null,
             "args": null,
             "kind": "ScalarField",
             "name": "isSaved",
             "storageKey": null
           },
           {
-            "alias": "is_hangable",
+            "alias": null,
             "args": null,
             "kind": "ScalarField",
             "name": "isHangable",
@@ -259,7 +259,7 @@ return {
     ]
   },
   "params": {
-    "id": "e227d3115b8cab1ec7dc4093962c848f",
+    "id": "714b1603b47123d85a313d386fef4bf9",
     "metadata": {},
     "name": "ArtworkActionsTestsQuery",
     "operationKind": "query",

@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 // @ts-nocheck
-/* @relayHash 5cf0f8d6da8222bafac187f0fd42b62f */
+/* @relayHash b0dc43a3888825a88741243653d28d43 */
 
 import { ConcreteRequest } from "relay-runtime";
 import { FragmentRefs } from "relay-runtime";
@@ -31,9 +31,11 @@ fragment ArtworkGridItem_artwork on Artwork {
   date
   saleMessage
   slug
+  id
   internalID
   artistNames
   href
+  isSaved
   sale {
     isAuction
     isClosed
@@ -351,6 +353,13 @@ return {
                           {
                             "alias": null,
                             "args": null,
+                            "kind": "ScalarField",
+                            "name": "isSaved",
+                            "storageKey": null
+                          },
+                          {
+                            "alias": null,
+                            "args": null,
                             "concreteType": "Sale",
                             "kind": "LinkedField",
                             "name": "sale",
@@ -499,7 +508,7 @@ return {
     ]
   },
   "params": {
-    "id": "5cf0f8d6da8222bafac187f0fd42b62f",
+    "id": "b0dc43a3888825a88741243653d28d43",
     "metadata": {},
     "name": "NewWorksForYouQuery",
     "operationKind": "query",

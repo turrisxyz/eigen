@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 // @ts-nocheck
-/* @relayHash c3b5c62489fd4054b8b286bc2feaaadc */
+/* @relayHash 5ef21f5a7ebcfc93eba63cf9daa82a9b */
 
 import { ConcreteRequest } from "relay-runtime";
 import { FragmentRefs } from "relay-runtime";
@@ -43,8 +43,8 @@ fragment ArtworkActions_artwork on Artwork {
   slug
   title
   href
-  is_saved: isSaved
-  is_hangable: isHangable
+  isSaved
+  isHangable
   artists {
     name
     id
@@ -638,14 +638,14 @@ return {
           },
           (v5/*: any*/),
           {
-            "alias": "is_saved",
+            "alias": null,
             "args": null,
             "kind": "ScalarField",
             "name": "isSaved",
             "storageKey": null
           },
           {
-            "alias": "is_hangable",
+            "alias": null,
             "args": null,
             "kind": "ScalarField",
             "name": "isHangable",
@@ -1362,7 +1362,7 @@ return {
     ]
   },
   "params": {
-    "id": "c3b5c62489fd4054b8b286bc2feaaadc",
+    "id": "5ef21f5a7ebcfc93eba63cf9daa82a9b",
     "metadata": {},
     "name": "ArtworkAboveTheFoldQuery",
     "operationKind": "query",
