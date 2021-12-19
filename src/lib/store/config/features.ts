@@ -89,12 +89,6 @@ export const features = defineFeatures({
     description: "Enable home auction results",
     showInAdminMenu: true,
   },
-  AREnableCustomSharesheet: {
-    readyForRelease: true,
-    echoFlagKey: "AREnableCustomSharesheet",
-    description: "Enable custom share sheet",
-    showInAdminMenu: true,
-  },
   AREnableOrderHistoryOption: {
     readyForRelease: true,
     echoFlagKey: "AREnableOrderHistoryOption",
