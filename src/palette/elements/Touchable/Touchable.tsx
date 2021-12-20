@@ -1,10 +1,5 @@
 import React from "react"
-import {
-  GestureResponderEvent,
-  TouchableHighlight,
-  TouchableHighlightProps,
-  TouchableWithoutFeedback,
-} from "react-native"
+import { TouchableHighlight, TouchableHighlightProps, TouchableWithoutFeedback } from "react-native"
 import ContextMenu, { ContextMenuAction, ContextMenuProps } from "react-native-context-menu-view"
 import Haptic, { HapticFeedbackTypes } from "react-native-haptic-feedback"
 
@@ -95,7 +90,9 @@ export const Touchable: React.FC<TouchableProps> = ({
 
   return contextActions !== undefined ? (
     <ContextMenu actions={contextActions} onPress={contextOnPress}>
-      <InnerTouchable />
+      <Flex borderWidth={1} borderColor="red">
+        <InnerTouchable />
+      </Flex>
     </ContextMenu>
   ) : (
     <InnerTouchable />

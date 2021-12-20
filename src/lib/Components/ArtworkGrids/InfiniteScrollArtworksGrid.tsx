@@ -225,9 +225,9 @@ class InfiniteScrollArtworksGrid extends React.Component<Props & PrivateProps, S
 
     if (width) {
       // This is the sum of all margins in between sections, so do not count to the right of last column.
-      const sectionMargins = this.props.sectionMargin! * (this.props.sectionCount! - 1)
+      const sectionMargins = 0 // this.props.sectionMargin! * (this.props.sectionCount! - 1)
       const { shouldAddPadding } = this.props
-      const artworkPadding = shouldAddPadding ? 40 : 0
+      const artworkPadding = 0
 
       return (width - sectionMargins) / (this.props.sectionCount! - artworkPadding)
     }
@@ -290,6 +290,8 @@ class InfiniteScrollArtworksGrid extends React.Component<Props & PrivateProps, S
       height: this.props.itemMargin,
     }
 
+    /// add some padding on the thing
+    /// check whats up on android
     const artworks = extractNodes(this.props.connection)
     const sectionedArtworks = this.sectionedArtworks()
     const sections: JSX.Element[] = []
@@ -325,8 +327,8 @@ class InfiniteScrollArtworksGrid extends React.Component<Props & PrivateProps, S
       }
 
       const sectionSpecificStyle = {
-        width: this.state.sectionDimension,
-        marginRight: column === columnCount - 1 ? 0 : this.props.sectionMargin,
+        // width: this.state.sectionDimension,
+        // marginRight: column === columnCount - 1 ? 0 : this.props.sectionMargin,
       }
 
       sections.push(
@@ -350,7 +352,7 @@ class InfiniteScrollArtworksGrid extends React.Component<Props & PrivateProps, S
   render() {
     const artworks = this.state.sectionDimension ? this.renderSections() : null
     const { shouldAddPadding, hasMore, stickyHeaderIndices, useParentAwareScrollView } = this.props
-    const boxPadding = shouldAddPadding ? 2 : 0
+    const boxPadding = 0
 
     const ScrollViewWrapper = useParentAwareScrollView ? ParentAwareScrollView : ScrollView
 
@@ -369,11 +371,12 @@ class InfiniteScrollArtworksGrid extends React.Component<Props & PrivateProps, S
           stickyHeaderIndices={stickyHeaderIndices}
         >
           {this.renderHeader()}
-          <Box px={boxPadding}>
-            <View style={styles.container} accessibilityLabel="Artworks Content View">
-              {artworks}
-            </View>
-          </Box>
+          {/* <Box px={boxPadding} backgroundColor={"red"}> */}
+          {/* <View style={styles.container} accessibilityLabel="Artworks Content View"> */}
+          <Flex backgroundColor="red" flex={1} height={30} width="100%" />
+          {/* {artworks} */}
+          {/* // </View> */}
+          {/* // </Box> */}
 
           {!this.props.autoFetch && !!hasMore() && (
             <Button
