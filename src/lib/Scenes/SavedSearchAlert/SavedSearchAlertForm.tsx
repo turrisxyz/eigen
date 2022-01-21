@@ -1,6 +1,6 @@
 import { ActionType, DeletedSavedSearch, EditedSavedSearch, OwnerType } from "@artsy/cohesion"
 import { FormikProvider, useFormik } from "formik"
-import { SearchCriteria } from "lib/Components/ArtworkFilter/SavedSearch/types"
+import { SearchCriteria, SearchCriteriaAttributes } from "lib/Components/ArtworkFilter/SavedSearch/types"
 import { useFeatureFlag } from "lib/store/GlobalStore"
 import { Dialog, quoteLeft, quoteRight, useTheme } from "palette"
 import React, { useEffect, useState } from "react"
@@ -12,6 +12,7 @@ import { createSavedSearchAlert } from "./mutations/createSavedSearchAlert"
 import { deleteSavedSearchMutation } from "./mutations/deleteSavedSearchAlert"
 import { updateEmailFrequency } from "./mutations/updateEmailFrequency"
 import { updateSavedSearchAlert } from "./mutations/updateSavedSearchAlert"
+import { getSavedSearchIdByCriteria } from "./queries/getSavedSearchIdByCriteria"
 import {
   SavedSearchAlertFormPropsBase,
   SavedSearchAlertFormValues,
@@ -79,7 +80,6 @@ export const SavedSearchAlertForm: React.FC<SavedSearchAlertFormProps> = (props)
       }
 
       try {
-        let result: SavedSearchAlertMutationResult
         const clearedAttributes = clearDefaultAttributes(attributes)
 
         /**
@@ -97,23 +97,59 @@ export const SavedSearchAlertForm: React.FC<SavedSearchAlertFormProps> = (props)
           const response = await updateSavedSearchAlert(savedSearchAlertId!, userAlertSettings, criteria)
           tracking.trackEvent(tracks.editedSavedSearch(savedSearchAlertId!, initialValues, values))
 
-          result = {
+          const result: SavedSearchAlertMutationResult = {
             id: response.updateSavedSearch?.savedSearchOrErrors.internalID!,
           }
+
+          onComplete?.(result)
         } else {
-          const response = await createSavedSearchAlert(userAlertSettings, clearedAttributes)
+          if (isEnabledImprovedAlertsFlow) {
+            const hasDuplicate = await getSavedSearchIdByCriteria(clearedAttributes)
 
-          result = {
-            id: response.createSavedSearch?.savedSearchOrErrors.internalID!,
+            if (hasDuplicate) {
+              Alert.alert(
+                "Duplicate alert",
+                "You already have previously created saved search alert with the same filters. Do you want to replace it?",
+                [
+                  {
+                    text: "Cancel",
+                  },
+                  {
+                    onPress: () => {
+                      handleSaveAlert(userAlertSettings, clearedAttributes)
+                    },
+                    style: "destructive",
+                    text: "Replace",
+                  },
+                ]
+              )
+              return
+            }
           }
-        }
 
-        onComplete?.(result)
+          handleSaveAlert(userAlertSettings, clearedAttributes)
+        }
       } catch (error) {
         console.error(error)
       }
     },
   })
+
+  const handleSaveAlert = async (
+    userAlertSettings: SavedSearchAlertFormValues,
+    alertAttributes: SearchCriteriaAttributes
+  ) => {
+    try {
+      const response = await createSavedSearchAlert(userAlertSettings, alertAttributes)
+      const result: SavedSearchAlertMutationResult = {
+        id: response.createSavedSearch?.savedSearchOrErrors.internalID!,
+      }
+
+      onComplete?.(result)
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   /**
    * If the initial value of push has changed (for example, the user has minimized the app and turned off Push notifications in settings)
