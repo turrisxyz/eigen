@@ -15,7 +15,6 @@ interface FormProps {
   artistId: string
   artistName: string
   isLoading?: boolean
-  isPreviouslySaved?: boolean
   hasChangedFilters?: boolean
   onDeletePress?: () => void
   onSubmitPress?: () => void
@@ -32,7 +31,6 @@ export const Form: React.FC<FormProps> = (props) => {
     artistName,
     savedSearchAlertId,
     isLoading,
-    isPreviouslySaved,
     hasChangedFilters,
     onDeletePress,
     onSubmitPress,
@@ -49,7 +47,7 @@ export const Form: React.FC<FormProps> = (props) => {
   let isSaveAlertButtonDisabled = false
 
   // Data has not changed or has already been saved
-  if ((isEditMode && !dirty) || isPreviouslySaved) {
+  if (isEditMode && !dirty) {
     isSaveAlertButtonDisabled = true
   }
 
