@@ -73,7 +73,8 @@
     "secrets:add-from:staged": "scripts/secrets-add-staged",
     "secrets:add-from:all": "scripts/secrets-add-all",
     "secrets:generate!": "scripts/secrets-generate-baseline",
-    "update-metaphysics": "node scripts/update-metaphysics.js"
+    "update-metaphysics": "node scripts/update-metaphysics.js",
+    "betterer": "betterer"
   },
   "repository": {
     "type": "git",
@@ -197,6 +198,7 @@
     "@babel/plugin-transform-runtime": "7.11.5",
     "@babel/preset-typescript": "7.16.5",
     "@babel/runtime": "7.11.2",
+    "@betterer/cli": "3.1.2",
     "@octokit/rest": "16.34.0",
     "@omakase/cli": "0.0.10",
     "@react-native-community/cli-platform-ios": "3.0.0",
@@ -283,7 +285,7 @@
     "recursive-readdir-sync": "1.0.6",
     "redux-flipper": "1.4.2",
     "relay-compiler": "12.0.0",
-    "relay-compiler-language-typescript": "15.0.0",
+    "relay-compiler-language-typescript": "15.0.1",
     "relay-config": "12.0.1",
     "relay-mock-network-layer": "3.0.0",
     "relay-runtime": "12.0.0",
