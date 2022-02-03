@@ -98,7 +98,8 @@
   ],
   "resolutions": {
     "//": "don't forget to document the resolutions in HACKS.md",
-    "cheerio": "0.22.0"
+    "cheerio": "0.22.0",
+    "react": "16.13.1"
   },
   "dependencies": {
     "@artsy/cohesion": "4.31.0",
@@ -198,7 +199,7 @@
     "@babel/plugin-transform-runtime": "7.11.5",
     "@babel/preset-typescript": "7.16.5",
     "@babel/runtime": "7.11.2",
-    "@betterer/cli": "3.1.2",
+    "@betterer/cli": "4.0.0",
     "@octokit/rest": "16.34.0",
     "@omakase/cli": "0.0.10",
     "@react-native-community/cli-platform-ios": "3.0.0",
