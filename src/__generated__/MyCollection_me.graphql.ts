@@ -1,49 +1,53 @@
+/**
+ * @generated SignedSource<<5559d0c464d0245bd1057428c9b511f3>>
+ * @lightSyntaxTransform
+ * @nogrep
+ */
+
 /* tslint:disable */
 /* eslint-disable */
 // @ts-nocheck
 
-import { ReaderFragment } from "relay-runtime";
+import { Fragment, ReaderFragment } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
-export type MyCollection_me = {
-    readonly id: string;
-    readonly myCollectionInfo: {
-        readonly includesPurchasedArtworks: boolean;
-    } | null;
-    readonly myCollectionConnection: {
-        readonly edges: ReadonlyArray<{
-            readonly node: {
-                readonly id: string;
-                readonly medium: string | null;
-                readonly title: string | null;
-                readonly pricePaid: {
-                    readonly minor: number;
-                } | null;
-                readonly attributionClass: {
-                    readonly name: string | null;
-                } | null;
-                readonly sizeBucket: string | null;
-                readonly width: string | null;
-                readonly height: string | null;
-                readonly artist: {
-                    readonly internalID: string;
-                    readonly name: string | null;
-                } | null;
-                readonly consignmentSubmission: {
-                    readonly displayText: string | null;
-                } | null;
-            } | null;
-        } | null> | null;
-        readonly " $fragmentRefs": FragmentRefs<"MyCollectionArtworkList_myCollectionConnection" | "InfiniteScrollArtworksGrid_myCollectionConnection">;
-    } | null;
-    readonly " $refType": "MyCollection_me";
+export type MyCollection_me$data = {
+  readonly id: string;
+  readonly myCollectionInfo: {
+    readonly includesPurchasedArtworks: boolean;
+  } | null;
+  readonly myCollectionConnection: {
+    readonly edges: ReadonlyArray<{
+      readonly node: {
+        readonly id: string;
+        readonly medium: string | null;
+        readonly title: string | null;
+        readonly pricePaid: {
+          readonly minor: number;
+        } | null;
+        readonly attributionClass: {
+          readonly name: string | null;
+        } | null;
+        readonly sizeBucket: string | null;
+        readonly width: string | null;
+        readonly height: string | null;
+        readonly artist: {
+          readonly internalID: string;
+          readonly name: string | null;
+        } | null;
+        readonly consignmentSubmission: {
+          readonly displayText: string | null;
+        } | null;
+      } | null;
+    } | null> | null;
+    readonly " $fragmentSpreads": FragmentRefs<"MyCollectionArtworkList_myCollectionConnection" | "InfiniteScrollArtworksGrid_myCollectionConnection">;
+  } | null;
+  readonly " $fragmentType": "MyCollection_me";
 };
-export type MyCollection_me$data = MyCollection_me;
+export type MyCollection_me = MyCollection_me$data;
 export type MyCollection_me$key = {
-    readonly " $data"?: MyCollection_me$data | undefined;
-    readonly " $fragmentRefs": FragmentRefs<"MyCollection_me">;
+  readonly " $data"?: MyCollection_me$data;
+  readonly " $fragmentSpreads": FragmentRefs<"MyCollection_me">;
 };
-
-
 
 const node: ReaderFragment = (function(){
 var v0 = {
@@ -255,6 +259,22 @@ return {
           "storageKey": null
         },
         {
+          "args": null,
+          "kind": "FragmentSpread",
+          "name": "MyCollectionArtworkList_myCollectionConnection"
+        },
+        {
+          "args": [
+            {
+              "kind": "Literal",
+              "name": "skipArtworkGridItem",
+              "value": true
+            }
+          ],
+          "kind": "FragmentSpread",
+          "name": "InfiniteScrollArtworksGrid_myCollectionConnection"
+        },
+        {
           "alias": null,
           "args": null,
           "concreteType": "PageInfo",
@@ -278,22 +298,6 @@ return {
             }
           ],
           "storageKey": null
-        },
-        {
-          "args": null,
-          "kind": "FragmentSpread",
-          "name": "MyCollectionArtworkList_myCollectionConnection"
-        },
-        {
-          "args": [
-            {
-              "kind": "Literal",
-              "name": "skipArtworkGridItem",
-              "value": true
-            }
-          ],
-          "kind": "FragmentSpread",
-          "name": "InfiniteScrollArtworksGrid_myCollectionConnection"
         }
       ],
       "storageKey": null
@@ -303,5 +307,7 @@ return {
   "abstractKey": null
 };
 })();
-(node as any).hash = 'f85884aaa191d0ce7fa38b1f1c322246';
+
+(node as any).hash = "f85884aaa191d0ce7fa38b1f1c322246";
+
 export default node;

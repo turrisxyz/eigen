@@ -43,7 +43,7 @@
     "prepare": "patch-package && husky install",
     "prettier-project": "yarn run prettier-write 'src/**/*.{ts,tsx}'",
     "prettier-write": "prettier --write",
-    "relay": "relay-compiler; touch src/__generated__/.gitkeep",
+    "relay": "relay-compiler",
     "setup:artsy": "./scripts/setup-env-for-artsy",
     "setup:oss": "./scripts/setup-env-for-oss",
     "setup:artsy:update!": "scripts/update-env-for-artsy",

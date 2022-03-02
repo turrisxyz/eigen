@@ -1,187 +1,30 @@
+/**
+ * @generated SignedSource<<73459ef50d654f4c8d5a5948b6840a27>>
+ * @lightSyntaxTransform
+ * @nogrep
+ */
+
 /* tslint:disable */
 /* eslint-disable */
 // @ts-nocheck
-/* @relayHash 689ceceba0573add1e7bd9a6a495ff23 */
 
-import { ConcreteRequest } from "relay-runtime";
+import { ConcreteRequest, Query } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
-export type MyCollectionPaginationQueryVariables = {
-    count: number;
-    cursor?: string | null | undefined;
+export type MyCollectionPaginationQuery$variables = {
+  count: number;
+  cursor?: string | null;
 };
-export type MyCollectionPaginationQueryResponse = {
-    readonly me: {
-        readonly " $fragmentRefs": FragmentRefs<"MyCollection_me">;
-    } | null;
+export type MyCollectionPaginationQueryVariables = MyCollectionPaginationQuery$variables;
+export type MyCollectionPaginationQuery$data = {
+  readonly me: {
+    readonly " $fragmentSpreads": FragmentRefs<"MyCollection_me">;
+  } | null;
 };
+export type MyCollectionPaginationQueryResponse = MyCollectionPaginationQuery$data;
 export type MyCollectionPaginationQuery = {
-    readonly response: MyCollectionPaginationQueryResponse;
-    readonly variables: MyCollectionPaginationQueryVariables;
+  variables: MyCollectionPaginationQueryVariables;
+  response: MyCollectionPaginationQuery$data;
 };
-
-
-
-/*
-query MyCollectionPaginationQuery(
-  $count: Int!
-  $cursor: String
-) {
-  me {
-    ...MyCollection_me_1G22uz
-    id
-  }
-}
-
-fragment InfiniteScrollArtworksGrid_myCollectionConnection_15nBhX on MyCollectionConnection {
-  pageInfo {
-    hasNextPage
-    startCursor
-    endCursor
-  }
-  edges {
-    node {
-      title
-      slug
-      id
-      image {
-        aspectRatio
-      }
-      artistNames
-      medium
-      artist {
-        internalID
-        name
-        id
-      }
-      pricePaid {
-        minor
-      }
-      sizeBucket
-      width
-      height
-      date
-      ...MyCollectionArtworkGridItem_artwork
-    }
-  }
-}
-
-fragment MyCollectionArtworkGridItem_artwork on Artwork {
-  internalID
-  artist {
-    internalID
-    id
-  }
-  images {
-    url
-    isDefault
-  }
-  image {
-    aspectRatio
-  }
-  artistNames
-  medium
-  slug
-  title
-  date
-}
-
-fragment MyCollectionArtworkListItem_artwork on Artwork {
-  internalID
-  title
-  slug
-  id
-  medium
-  image {
-    url(version: "small")
-    aspectRatio
-  }
-  artistNames
-  artist {
-    internalID
-    name
-    id
-  }
-  pricePaid {
-    minor
-  }
-  sizeBucket
-  width
-  height
-  date
-}
-
-fragment MyCollectionArtworkList_myCollectionConnection on MyCollectionConnection {
-  pageInfo {
-    hasNextPage
-    startCursor
-    endCursor
-  }
-  edges {
-    node {
-      ...MyCollectionArtworkListItem_artwork
-      title
-      slug
-      id
-      artistNames
-      medium
-      artist {
-        internalID
-        name
-        id
-      }
-      pricePaid {
-        minor
-      }
-      sizeBucket
-      width
-      height
-      date
-    }
-  }
-}
-
-fragment MyCollection_me_1G22uz on Me {
-  id
-  myCollectionInfo {
-    includesPurchasedArtworks
-  }
-  myCollectionConnection(first: $count, after: $cursor, sort: CREATED_AT_DESC) {
-    edges {
-      node {
-        id
-        medium
-        title
-        pricePaid {
-          minor
-        }
-        attributionClass {
-          name
-          id
-        }
-        sizeBucket
-        width
-        height
-        artist {
-          internalID
-          name
-          id
-        }
-        consignmentSubmission {
-          displayText
-        }
-        __typename
-      }
-      cursor
-    }
-    ...MyCollectionArtworkList_myCollectionConnection
-    ...InfiniteScrollArtworksGrid_myCollectionConnection_15nBhX
-    pageInfo {
-      endCursor
-      hasNextPage
-    }
-  }
-}
-*/
 
 const node: ConcreteRequest = (function(){
 var v0 = [
@@ -576,13 +419,16 @@ return {
     ]
   },
   "params": {
-    "id": "689ceceba0573add1e7bd9a6a495ff23",
+    "cacheID": "689ceceba0573add1e7bd9a6a495ff23",
+    "id": null,
     "metadata": {},
     "name": "MyCollectionPaginationQuery",
     "operationKind": "query",
-    "text": null
+    "text": "query MyCollectionPaginationQuery(\n  $count: Int!\n  $cursor: String\n) {\n  me {\n    ...MyCollection_me_1G22uz\n    id\n  }\n}\n\nfragment InfiniteScrollArtworksGrid_myCollectionConnection_15nBhX on MyCollectionConnection {\n  pageInfo {\n    hasNextPage\n    startCursor\n    endCursor\n  }\n  edges {\n    node {\n      title\n      slug\n      id\n      image {\n        aspectRatio\n      }\n      artistNames\n      medium\n      artist {\n        internalID\n        name\n        id\n      }\n      pricePaid {\n        minor\n      }\n      sizeBucket\n      width\n      height\n      date\n      ...MyCollectionArtworkGridItem_artwork\n    }\n  }\n}\n\nfragment MyCollectionArtworkGridItem_artwork on Artwork {\n  internalID\n  artist {\n    internalID\n    id\n  }\n  images {\n    url\n    isDefault\n  }\n  image {\n    aspectRatio\n  }\n  artistNames\n  medium\n  slug\n  title\n  date\n}\n\nfragment MyCollectionArtworkListItem_artwork on Artwork {\n  internalID\n  title\n  slug\n  id\n  medium\n  image {\n    url(version: \"small\")\n    aspectRatio\n  }\n  artistNames\n  artist {\n    internalID\n    name\n    id\n  }\n  pricePaid {\n    minor\n  }\n  sizeBucket\n  width\n  height\n  date\n}\n\nfragment MyCollectionArtworkList_myCollectionConnection on MyCollectionConnection {\n  pageInfo {\n    hasNextPage\n    startCursor\n    endCursor\n  }\n  edges {\n    node {\n      ...MyCollectionArtworkListItem_artwork\n      title\n      slug\n      id\n      artistNames\n      medium\n      artist {\n        internalID\n        name\n        id\n      }\n      pricePaid {\n        minor\n      }\n      sizeBucket\n      width\n      height\n      date\n    }\n  }\n}\n\nfragment MyCollection_me_1G22uz on Me {\n  id\n  myCollectionInfo {\n    includesPurchasedArtworks\n  }\n  myCollectionConnection(first: $count, after: $cursor, sort: CREATED_AT_DESC) {\n    edges {\n      node {\n        id\n        medium\n        title\n        pricePaid {\n          minor\n        }\n        attributionClass {\n          name\n          id\n        }\n        sizeBucket\n        width\n        height\n        artist {\n          internalID\n          name\n          id\n        }\n        consignmentSubmission {\n          displayText\n        }\n        __typename\n      }\n      cursor\n    }\n    ...MyCollectionArtworkList_myCollectionConnection\n    ...InfiniteScrollArtworksGrid_myCollectionConnection_15nBhX\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n"
   }
 };
 })();
-(node as any).hash = 'a64e16a10c23765ed650241c94d11823';
+
+(node as any).hash = "a64e16a10c23765ed650241c94d11823";
+
 export default node;
