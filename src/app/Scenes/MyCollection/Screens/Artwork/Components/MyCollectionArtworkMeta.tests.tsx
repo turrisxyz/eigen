@@ -48,7 +48,7 @@ describe("MyCollectionArtworkMeta", () => {
     jest.clearAllMocks()
   })
 
-  const sharedArtworkProps: Omit<MyCollectionArtworkMeta_artwork, " $refType"> = {
+  const sharedArtworkProps: Omit<MyCollectionArtworkMeta_artwork, " $fragmentType"> = {
     slug: "some-slug",
     artistNames: "some-artist-name",
     category: "Painting",

@@ -32,7 +32,7 @@ function getWrapper({
 
 describe("ArtworkExtraLinks", () => {
   it("redirects to /sales when consignments link is clicked from outside of sell tab", () => {
-    const artwork = {
+    const artwork: ArtworkExtraLinks_artwork = {
       ...ArtworkFixture,
       isForSale: true,
       artists: [
@@ -54,7 +54,7 @@ describe("ArtworkExtraLinks", () => {
   })
 
   it("redirects to /collections/my-collection/marketing-landing when consignments link is clicked from within sell tab", () => {
-    const artwork = {
+    const artwork: ArtworkExtraLinks_artwork = {
       ...ArtworkFixture,
       isForSale: true,
       artists: [

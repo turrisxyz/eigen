@@ -247,27 +247,27 @@ const artworkTombstoneArtwork: ArtworkTombstone_artwork = {
     {
       name: "Andy Warhol",
       href: "/artist/andy-warhol",
-      " $fragmentRefs": null as any,
+      " $fragmentSpreads": null as any,
     },
     {
       name: "Alex Katz",
       href: "/artist/alex-katz",
-      " $fragmentRefs": null as any,
+      " $fragmentSpreads": null as any,
     },
     {
       name: "Pablo Picasso",
       href: "/artist/pablo-picasso",
-      " $fragmentRefs": null as any,
+      " $fragmentSpreads": null as any,
     },
     {
       name: "Banksy",
       href: "/artist/banksy",
-      " $fragmentRefs": null as any,
+      " $fragmentSpreads": null as any,
     },
     {
       name: "Barbara Kruger",
       href: "/artist/barbara-kruger",
-      " $fragmentRefs": null as any,
+      " $fragmentSpreads": null as any,
     },
   ],
   cultural_maker: null,
@@ -279,7 +279,7 @@ const artworkTombstoneArtwork: ArtworkTombstone_artwork = {
   attribution_class: {
     shortDescription: "This is an edition of something",
   },
-  " $refType": null as any,
+  " $fragmentType": "ArtworkTombstone_artwork",
 }
 
 const artworkTombstoneAuctionArtwork = {

@@ -110,7 +110,7 @@ export const ShowArtworksPaginationContainer = createPaginationContainer(
         slug
         internalID
         showArtworks: filterArtworksConnection(
-          first: 30
+          first: $count
           after: $cursor
           aggregations: [
             ARTIST

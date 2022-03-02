@@ -101,7 +101,6 @@ export const ArtistShows2PaginationContainer = createPaginationContainer(
         count: { type: "Int", defaultValue: 10 }
         status: { type: "String", defaultValue: "closed" }
         cursor: { type: "String" }
-        artistID: { type: "String!" }
       ) {
         slug
         name
@@ -140,8 +139,7 @@ export const ArtistShows2PaginationContainer = createPaginationContainer(
         $status: String!
       ) {
         artist(id: $artistID) {
-          ...ArtistShows2_artist
-            @arguments(count: $count, cursor: $cursor, artistID: $artistID, status: $status)
+          ...ArtistShows2_artist @arguments(count: $count, cursor: $cursor, status: $status)
         }
       }
     `,
@@ -157,7 +155,7 @@ export const ArtistShows2QueryRenderer: React.FC<{ artistID: string }> = ({ arti
         query ArtistShows2Query($artistID: String!) {
           artist(id: $artistID) {
             slug
-            ...ArtistShows2_artist @arguments(artistID: $artistID)
+            ...ArtistShows2_artist
           }
         }
       `}

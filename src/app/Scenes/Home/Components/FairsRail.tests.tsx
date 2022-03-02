@@ -21,10 +21,10 @@ const artworkNode = {
   },
 }
 
-const emptyFairsModule: Omit<FairsRail_fairsModule, " $refType"> = {
+const emptyFairsModule: CleanRelay<FairsRail_fairsModule> = {
   results: [],
 }
-const fairsModule: Omit<FairsRail_fairsModule, " $refType"> = {
+const fairsModule: CleanRelay<FairsRail_fairsModule> = {
   results: [
     {
       id: "the-fair",

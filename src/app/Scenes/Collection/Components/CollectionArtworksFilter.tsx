@@ -64,8 +64,7 @@ export const CollectionArtworksFilterFragmentContainer = createFragmentContainer
   CollectionArtworksFilter,
   {
     collection: graphql`
-      fragment CollectionArtworksFilter_collection on MarketingCollection
-      @argumentDefinitions(input: { type: "FilterArtworksInput" }) {
+      fragment CollectionArtworksFilter_collection on MarketingCollection {
         slug
         id
       }
