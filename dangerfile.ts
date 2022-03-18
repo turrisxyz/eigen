@@ -37,24 +37,6 @@ See [docs](https://moment.github.io/luxon/api-docs/index.html).
   }
 }
 
-// We are trying to migrate away from Enzyme towards @testing-library/react-native
-const preventUsingEnzyme = () => {
-  const newEnzymeImports = getCreatedFileNames(danger.git.created_files)
-    .filter(testOnlyFilter)
-    .filter((filename) => {
-      const content = fs.readFileSync(filename).toString()
-      return content.includes('from "enzyme"')
-    })
-  if (newEnzymeImports.length > 0) {
-    warn(`We are trying to migrate away from Enzyme towards \`@testing-library/react-native\`, but found Enzyme imports in the following new unit test files:
-
-${newEnzymeImports.map((filename) => `- \`${filename}\``).join("\n")}
-
-See [\`Pill.tests.tsx\`](https://github.com/artsy/eigen/blob/2f32d462bb3b4ce358c8a14e3ed09b42523de8bd/src/palette/elements/Pill/__tests__/Pill-tests.tsx) as an example, or [the docs](https://callstack.github.io/react-native-testing-library/docs/api-queries).
-  `)
-  }
-}
-
 // We are trying to migrate away from test-renderer towards @testing-library/react-native
 const preventUsingTestRenderer = () => {
   const newTRImports = getCreatedFileNames(danger.git.created_files)
@@ -142,7 +124,9 @@ export const validatePRChangelog = () => {
 
   if (res.type === "error") {
     console.log("Something went wrong while parsing the PR description")
-    warn("❌ **An error occurred while validating your changelog, please make sure you provided a valid changelog.**")
+    warn(
+      "❌ **An error occurred while validating your changelog, please make sure you provided a valid changelog.**"
+    )
     return
   }
 
@@ -162,7 +146,9 @@ export const validatePRChangelog = () => {
     "### This PR contains the following changes:\n" +
     Object.entries(pickBy(changedSections, (changesArray) => changesArray.length))
       .map(([section, sectionValue]) => {
-        return `\n- ${changelogTemplateSections[section as keyof typeof changedSections]} (${sectionValue})`
+        return `\n- ${
+          changelogTemplateSections[section as keyof typeof changedSections]
+        } (${sectionValue})`
       })
       .join("")
 
@@ -193,7 +179,6 @@ export const useWebPs = (fileNames: string[]) => {
   const newCreatedFileNames = getCreatedFileNames(danger.git.created_files)
 
   preventUsingMoment()
-  preventUsingEnzyme()
   preventUsingTestRenderer()
   preventUsingRenderRelayTree()
   verifyRemainingDevWork()

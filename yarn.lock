@@ -2824,15 +2824,15 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@betterer/betterer@^5.1.5":
-  version "5.1.5"
-  resolved "https://registry.yarnpkg.com/@betterer/betterer/-/betterer-5.1.5.tgz#8b6d29a49e327ca7fe42fe947cc6ff34d3009b83"
-  integrity sha512-fpKN88o/Fxl9KpLCQjAtjjqLZT+j1I1yf/nfsbrI6p84ZXGCxHcwO+lR63pq78yRmD8fyzLCv/uPM3P4LriKAA==
+"@betterer/betterer@^5.1.6":
+  version "5.1.6"
+  resolved "https://registry.yarnpkg.com/@betterer/betterer/-/betterer-5.1.6.tgz#52ac359e57698be70cf72ecee9d1c1ff8e466660"
+  integrity sha512-9m41Bg/OE6CTGlO93H9VyJnh2tDiVoseGzdYXHwRXR+bBeGp+qov8RAI2+55erUGpnzlrAAkcH4pyvVtivDyvQ==
   dependencies:
     "@betterer/constraints" "^5.0.0"
     "@betterer/errors" "^5.0.0"
     "@betterer/logger" "^5.1.5"
-    "@betterer/reporter" "^5.1.5"
+    "@betterer/reporter" "^5.1.6"
     "@phenomnomnominal/debug" "^0.2.5"
     "@phenomnomnominal/worker-require" "^0.0.34"
     chokidar "^3.3.1"
@@ -2847,12 +2847,12 @@
   optionalDependencies:
     typescript ">=2.7"
 
-"@betterer/cli@5.1.5":
-  version "5.1.5"
-  resolved "https://registry.yarnpkg.com/@betterer/cli/-/cli-5.1.5.tgz#b89546002a6f4b9105697e8365e33909c18ea096"
-  integrity sha512-n2vTeJGA4hUlV8bL3Tw6U3NOtACAg88G8U/5pjajIRIQd+01ZEFLW5bywRtsUoGbUwVoUG+1Hk/C1GvYF193uA==
+"@betterer/cli@5.1.6":
+  version "5.1.6"
+  resolved "https://registry.yarnpkg.com/@betterer/cli/-/cli-5.1.6.tgz#22b8c6b160ac0c1b0d1f66fe98bafe5bfa23d0f6"
+  integrity sha512-eT9oxmt0iHH8N6gcpw45ceGqyfnUJBqeSh4GBDbO6+LvfkT7z/KKfyCqMCXSLYxJcp50H9P2vWS3GTwyEM4znw==
   dependencies:
-    "@betterer/betterer" "^5.1.5"
+    "@betterer/betterer" "^5.1.6"
     "@betterer/errors" "^5.0.0"
     "@betterer/tasks" "^5.1.5"
     "@phenomnomnominal/tsquery" "^4.1.1"
@@ -2892,12 +2892,12 @@
     react-dom ">=16.8.4 || >=17.0.0"
     tslib "^2.3.1"
 
-"@betterer/reporter@^5.1.5":
-  version "5.1.5"
-  resolved "https://registry.yarnpkg.com/@betterer/reporter/-/reporter-5.1.5.tgz#88741acb1fe6d84d04e7b8a52ccce376ed6a0f7c"
-  integrity sha512-VvHzqRBVoFOQFORu0mrp+BQxur/xpEiVNqXCzPsWzvIaI6nwTiBBC1kuX610hI+zQ7Yg7Gr48kFZPCgvZgEMWg==
+"@betterer/reporter@^5.1.6":
+  version "5.1.6"
+  resolved "https://registry.yarnpkg.com/@betterer/reporter/-/reporter-5.1.6.tgz#bde20a3e7b1a67e66d5a8d29c5676c3d767eb928"
+  integrity sha512-A8A5Zt0Qwzuwb1lvnxQhvoAz4Px0N7d/Ti9CQhYNNjWC+TkvQlMQj5VdPXZMyDaMANGmNGYgxgP1Vlt4EzHo8Q==
   dependencies:
-    "@betterer/betterer" "^5.1.5"
+    "@betterer/betterer" "^5.1.6"
     "@betterer/errors" "^5.0.0"
     "@betterer/logger" "^5.1.5"
     "@betterer/tasks" "^5.1.5"

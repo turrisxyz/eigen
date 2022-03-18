@@ -151,3 +151,4 @@ metaflags.json
 
 # Keep these, so we can keep the folders these appear in
 !.gitkeep
+.betterer.cache

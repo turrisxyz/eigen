@@ -6,136 +6,136 @@
 exports[`removeEnzyme`] = {
   value: `{
     "src/lib/Components/Bidding/Components/Timer.tests.tsx:1865986795": [
-      [0, 1, NaN, "lol 150", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Components/Bidding/Context/TimeOffsetProvider.tests.tsx:66986480": [
-      [0, 1, NaN, "lol 150", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Components/Bidding/Screens/BidResult.tests.tsx:856177883": [
-      [0, 2, NaN, "lol 238", "5381"]
+      [2, 19, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Components/Countdown/CountdownTimer.tests.tsx:3280178993": [
-      [0, 10, NaN, "lol 460", "5381"]
+      [10, 18, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Components/Countdown/DurationProvider.tests.tsx:2901460432": [
-      [0, 1, NaN, "lol 152", "5381"]
+      [1, 19, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Components/Countdown/StateManager.tests.tsx:1559132031": [
-      [0, 1, NaN, "lol 150", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Components/EntityList/index.tests.tsx:3763722340": [
-      [0, 1, NaN, "lol 150", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
-    "src/lib/Components/HoursCollapsible.tests.tsx:3815328582": [
-      [0, 1, NaN, "lol 150", "5381"]
+    "src/lib/Components/HoursCollapsible.tests.tsx:485729196": [
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Components/Portal.tests.tsx:2279480460": [
-      [0, 1, NaN, "lol 150", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Artwork/Components/AboutArtist.tests.tsx:3254954445": [
-      [0, 1, NaN, "lol 150", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Artwork/Components/ArtworkActions.tests.tsx:1171674329": [
-      [0, 2, NaN, "lol 251", "5381"]
+      [2, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Artwork/Components/ArtworkDetails.tests.tsx:1447505463": [
-      [0, 2, NaN, "lol 236", "5381"]
+      [2, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Artwork/Components/ArtworkExtraLinks/index.tests.tsx:1130438954": [
-      [0, 1, NaN, "lol 150", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Artwork/Components/ArtworkHistory.tests.tsx:1660663327": [
-      [0, 2, NaN, "lol 236", "5381"]
+      [2, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Artwork/Components/ArtworkTombstone.tests.tsx:404589646": [
-      [0, 2, NaN, "lol 240", "5381"]
+      [2, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Artwork/Components/CommercialEditionSetInformation.tests.tsx:1098356116": [
-      [0, 1, NaN, "lol 150", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Artwork/Components/CommercialInformation.tests.tsx:473039476": [
-      [0, 1, NaN, "lol 150", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Artwork/Components/CommercialPartnerInformation.tests.tsx:1121869850": [
-      [0, 1, NaN, "lol 150", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Artwork/Components/ContextCard.tests.tsx:3587566879": [
-      [0, 1, NaN, "lol 31", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Artwork/Components/FollowArtistLink.tests.tsx:128863438": [
-      [0, 3, NaN, "lol 370", "5381"]
+      [3, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Artwork/Components/ImageCarousel/FullScreen/ImageCarouselFullScreen.tests.tsx:2257934825": [
-      [0, 1, NaN, "lol 150", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Artwork/Components/ImageCarousel/ImageCarouselContext.tests.tsx:983294157": [
-      [0, 1, NaN, "lol 150", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Artwork/Components/ImageCarousel/ImageCarouselEmbedded.tests.tsx:3352635716": [
-      [0, 1, NaN, "lol 150", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Artwork/Components/ImageCarousel/ImageWithLoadingState.tests.tsx:488416243": [
-      [0, 1, NaN, "lol 150", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Artwork/Components/ImageCarousel/useAnimatedValue.tests.tsx:1772336952": [
-      [0, 1, NaN, "lol 150", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Artwork/Components/ImageCarousel/useSpringValue.tests.tsx:3482622503": [
-      [0, 1, NaN, "lol 150", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Artwork/Components/OtherWorks.tests.tsx:2965651722": [
-      [0, 1, NaN, "lol 159", "5381"]
+      [1, 26, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Artwork/Components/OtherWorks/Header.tests.tsx:147699303": [
-      [0, 1, NaN, "lol 150", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Artwork/Components/PartnerCard.tests.tsx:1679019208": [
-      [0, 3, NaN, "lol 206", "5381"]
+      [3, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Artwork/Components/RequestConditionReport-analytics.tests.tsx:2119011214": [
-      [0, 3, NaN, "lol 344", "5381"]
+      [3, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Artwork/Components/RequestConditionReport.tests.tsx:3085590863": [
-      [0, 3, NaN, "lol 344", "5381"]
+      [3, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/City/Components/BMWEventSection/index.tests.tsx:2667609194": [
-      [0, 1, NaN, "lol 150", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/City/Components/Event/index.tests.tsx:3081909556": [
-      [0, 1, NaN, "lol 150", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/City/Components/EventSection/index.tests.tsx:2286046377": [
-      [0, 1, NaN, "lol 150", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/City/Components/FairEventSection/index.tests.tsx:2884233030": [
-      [0, 1, NaN, "lol 150", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/City/Components/TabFairItemRow/index.tests.tsx:3707363893": [
-      [0, 1, NaN, "lol 150", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Collection/Components/CollectionHubsRails/ArtistSeries/CollectionArtistSeriesRail.tests.tsx:3132162259": [
-      [0, 10, NaN, "lol 497", "5381"]
+      [10, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Collection/Screens/CollectionHeader.tests.tsx:3292947540": [
-      [0, 2, NaN, "lol 255", "5381"]
+      [2, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Consignments/Screens/Overview-analytics.tests.tsx:365444177": [
-      [0, 1, NaN, "lol 152", "5381"]
+      [1, 19, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Inbox/Components/Typography/index.tests.tsx:3952142625": [
-      [0, 1, NaN, "lol 152", "5381"]
+      [1, 19, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/PrivacyRequest/PrivacyRequest.tests.tsx:1406357477": [
-      [0, 1, NaN, "lol 152", "5381"]
+      [1, 19, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/Scenes/Sales/index.tests.tsx:2849098300": [
-      [0, 1, NaN, "lol 152", "5381"]
+      [1, 19, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/tests/MockRelayRenderer.tests.tsx:581816844": [
-      [0, 1, NaN, "lol 150", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ],
     "src/lib/tests/renderUntil.tests.tsx:3989024401": [
-      [0, 1, NaN, "lol 150", "5381"]
+      [1, 17, 13, "We are trying to migrate away from Enzyme. Try using \`renderWithWrappersTL\` instead.", "2137030771"]
     ]
   }`
 };
