@@ -179,8 +179,6 @@ describe("SaleHeader", () => {
         const cascadeEndTimeLabel = getByText("Lots close at 1-minute intervals")
         expect(cascadeEndTimeLabel).toBeTruthy()
       })
-<<<<<<< HEAD
-=======
 
       describe("absolute date label", () => {
         it("shows the start date if the sale has not started", () => {
@@ -356,7 +354,6 @@ describe("SaleHeader", () => {
           expect(absoluteTime).toBeTruthy()
         })
       })
->>>>>>> 5223d46bb (Add date time and timer to sale details)
     })
 
     describe("when the cascade end time flag is turned off", () => {
